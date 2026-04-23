@@ -78,8 +78,7 @@ Their work made this possible.
 
 Want to help make the launcher available worldwide? 🌎
 
-Join the Weblate project:  
-https://hosted.weblate.org/projects/zalithlauncher2
+Do a Pull Request!
 
 Every contribution helps expand accessibility.
 
