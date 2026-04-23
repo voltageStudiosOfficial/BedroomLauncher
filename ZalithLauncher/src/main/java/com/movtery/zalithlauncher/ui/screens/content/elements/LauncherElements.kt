@@ -151,11 +151,7 @@ fun LaunchGameOperation(
                 withContext(Dispatchers.Main) {
                     Toast.makeText(activity, R.string.game_launch_no_account, Toast.LENGTH_SHORT).show()
                 }
-                val isOffline = AccountsManager.isOffline.value
-                toAccountManageScreen(
-                    if (isOffline) FirstLoginMenu.MICROSOFT
-                    else FirstLoginMenu.NORMAL
-                )
+                toAccountManageScreen(FirstLoginMenu.NORMAL)
                 updateOperation(LaunchGameOperation.None)
             }
         }
