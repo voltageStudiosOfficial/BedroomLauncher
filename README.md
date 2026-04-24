@@ -7,7 +7,7 @@
 ---
 
 > [!IMPORTANT]
-> 🚫 This project is **NOT** 0  
+> 🚫 This project is **NOT** ZalithLauncher 
 > 🛡️ It is not affiliated with or endorsed by its developers.  
 > 🧠 This is an independent, unofficial fork with its own direction.
 
