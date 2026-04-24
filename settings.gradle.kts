@@ -24,8 +24,8 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ZalithLauncher"
-include(":ZalithLauncher")
+rootProject.name = "BedroomLauncher"
+include(":BedroomLauncher")
 include(":LWJGL")
 include(":LayerController")
 include(":ColorPicker")
