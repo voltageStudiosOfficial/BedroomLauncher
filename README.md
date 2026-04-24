@@ -1,139 +1,182 @@
-# 🛏️ Bedroom Launcher
+🛏️ Bedroom Launcher
 
 > ⚡ Launch Minecraft. From your room. On your terms.
 
-[![Downloads](https://img.shields.io/github/downloads/voltageStudiosOfficial/BedroomLauncher/total)](https://github.com/voltageStudiosOfficial/BedroomLauncher/releases)
+
+
+
+
 
 ---
 
-> [!IMPORTANT]
-> 🚫 This project is **NOT ZalithLauncher**.  
-> 🧠 It is an **independent, unofficial fork** built with its own direction.
+> [!IMPORTANT] 🚫 This project is NOT ZalithLauncher
+🛡️ It is not affiliated with or endorsed by its developers.
+🧠 This is an independent, unofficial fork with its own direction.
+
+
+
 
 ---
 
-## 🎮 What is Bedroom Launcher?
+🎮 What is Bedroom Launcher?
 
-**Bedroom Launcher** is an unofficial fork of Zalith Launcher 2, designed to run **Minecraft: Java Edition** on Android devices in a clean, modern, and straightforward way.
+Bedroom Launcher is an independent fork of Zalith Launcher 2, built to run Minecraft: Java Edition on Android with a focus on clarity, performance, and control.
 
 Built for people who want:
-- ⚡ Fast launching  
-- 🎮 Reliable gameplay  
-- 🧼 A clean, modern UI  
-- 🔓 Full control over their experience  
 
-No unnecessary extras. No weird behavior. Just a launcher that does its job.
+⚡ Fast launching
 
----
+🎮 Reliable gameplay
 
-## ⚙️ Tech Stack
+🧼 A clean, modern UI
 
-Under the hood:
-- ⚙️ Based on the PojavLauncher launch engine  
-- 🎨 UI built with Jetpack Compose + Material Design 3  
-- 🧪 Continuously improved and refined  
+🔓 Full control over their experience
+
+
+No clutter. No weird behavior. Just a launcher that does its job.
+
 
 ---
 
-## 🎨 Branding Policy (TL;DR)
-Bedroom Launcher is an independent project and is not affiliated with or endorsed by the developers of ZalithLauncher.
-“ZalithLauncher” is referenced solely to identify the upstream project and is not a name, trademark, or wordmark owned by this project.
-Forks, modifications, or redistributions must not be named or presented in a way that implies official status, endorsement, or affiliation with either project.
+⚙️ Tech Stack
+
+⚙️ Based on the PojavLauncher engine
+
+🎨 UI built with Jetpack Compose + Material Design 3
+
+🧪 Continuously refined and improved
+
+
+
+---
+
+🎨 Branding Policy (TL;DR)
+
+Bedroom Launcher is an independent project and is not affiliated with or endorsed by the developers of Zalith Launcher.
+
+“Zalith Launcher” is referenced solely to identify the upstream project and is not a name, trademark, or wordmark owned by this project.
+
+Forks, modifications, or redistributions must not imply official status, endorsement, or affiliation with either project.
+
 All modified or unofficial builds must be clearly labeled as such.
-Do not use logos, branding, or visual assets from the original project in any way that suggests endorsement or affiliation.
+
+Do not use logos, branding, or visual assets from the original project in a way that suggests endorsement or affiliation.
+
+
 
 ---
 
-## 🛡️ Safety & Authenticity
+🔐 Trust Statement
+
+Bedroom Launcher is built with a focus on transparency, safety, and user control.
+
+No hidden tracking
+
+No remote code execution
+
+No forced updates
+
+
+What you install is what you run.
+
+
+---
+
+🛡️ Safety & Authenticity
 
 Bedroom Launcher is an independent project.
 
-- We are not affiliated with Zalith Launcher or its websites  
-- We do not operate zalithlauncher.cn or similar domains  
-- We are not aware of any sites impersonating Bedroom Launcher  
+We are not affiliated with Zalith Launcher or its websites
+
+We do not operate zalithlauncher.cn or similar domains
+
+We are not aware of any sites impersonating Bedroom Launcher
+
 
 If you download builds:
-- ✔️ Use trusted sources (official GitHub releases only)  
-- ❌ Avoid unknown third-party sites  
 
-Protect your data. Stay smart.
+✔️ Use official GitHub releases only
 
----
+❌ Avoid unknown third-party sites
 
-## 🙏 Credits
 
-Bedroom Launcher is built on top of amazing open-source work.
+If something feels off, don’t install it.
 
-Full credit to:
-- Zalith Launcher 2 contributors  
-- MovTery  
-- PojavLauncherTeam  
-
-Their work made this possible.
 
 ---
 
-## 🌍 Translations
+🙏 Credits
 
-Want to help make the launcher available worldwide? 🌎
+Zalith Launcher 2 contributors
 
-Do a Pull Request!
+MovTery
 
-Every contribution helps expand accessibility.
+PojavLauncherTeam
 
----
 
-## 🧑‍💻 Build Instructions (Developers)
-
-### Requirements
-
-- Android Studio Bumblebee or newer  
-- Android SDK:
-  - Minimum API level: 26  
-  - Target API level: 35  
-- JDK 11  
-- Git installed  
 
 ---
 
-### 🖥️ Build using terminal
+🌍 Translations
 
-Clone the repository and build:
+Open a Pull Request to help translate Bedroom Launcher.
+
+
+---
+
+🧑‍💻 Build Instructions
+
+Requirements
+
+Android Studio Bumblebee or newer
+
+Android SDK (API 26–35)
+
+JDK 11
+
+Git
+
+
+Build
 
 git clone https://github.com/voltageStudiosOfficial/BedroomLauncher.git
 cd BedroomLauncher
 ./gradlew assembleDebug
 
-On Windows:
+Windows:
 
 gradlew.bat assembleDebug
 
----
-
-### 📦 Output
-
-APK location:
+Output
 
 app/build/outputs/apk/debug/
 
+
 ---
 
-## 📜 License
+📜 License
 
-Licensed under the GNU GPLv3 (GPL-3.0)
+GNU GPLv3 (GPL-3.0)
 
-### Additional Terms (Section 7)
+Additional Terms (Section 7)
 
 1. Modified versions must:
-   - Use a clearly different name  
-   - Not include “ZalithLauncher”, “Bedroom Launcher”, or similar names  
-   - Clearly state they are unofficial  
 
-2. Attribution and license notices must not be removed or modified  
+Use a clearly different name
+
+Not include “Zalith Launcher”, “Bedroom Launcher”, or confusingly similar names
+
+Clearly state they are unofficial
+
+
+
+2. Attribution and license notices must not be removed or modified
+
+
+
 
 ---
 
-## 📚 Open Source Libraries
+📚 Open Source Libraries
 
-This project uses multiple open-source libraries.  
-See the repository for full license details.
+This project uses multiple open-source libraries. See repository for full details.
