@@ -36,12 +36,11 @@ Under the hood:
 ---
 
 ## 🎨 Branding Policy (TL;DR)
-
-- Bedroom Launcher is an independent project and not affiliated with Zalith Launcher or its maintainers.
-- “ZalithLauncher” is only used as a reference to the original upstream project name and is not a trademark or wordmark owned by this project.
-- Do not name forks or modified versions in a way that implies they are official, endorsed, or related to either Zalith Launcher or Bedroom Launcher.
-- Always clearly state when a build is unofficial or modified.
-- Do not use logos, branding, or visual identity from the original project in a way that suggests affiliation or endorsement.
+Bedroom Launcher is an independent project and is not affiliated with or endorsed by the developers of ZalithLauncher.
+“ZalithLauncher” is referenced solely to identify the upstream project and is not a name, trademark, or wordmark owned by this project.
+Forks, modifications, or redistributions must not be named or presented in a way that implies official status, endorsement, or affiliation with either project.
+All modified or unofficial builds must be clearly labeled as such.
+Do not use logos, branding, or visual assets from the original project in any way that suggests endorsement or affiliation.
 
 ---
 
