@@ -1,0 +1,43 @@
+name: Reset Tags & Releases
+
+on:
+  workflow_dispatch: # manual button in Actions tab
+
+permissions:
+  contents: write   # REQUIRED to delete tags/releases
+
+jobs:
+  reset:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🧾 Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # get all tags
+
+      - name: 🏷️ Delete all tags (local + remote)
+        run: |
+          tags=$(git tag -l)
+
+          if [ -z "$tags" ]; then
+            echo "No tags found 👍"
+          else
+            echo "Deleting local tags..."
+            echo "$tags" | xargs git tag -d
+
+            echo "Deleting remote tags..."
+            echo "$tags" | xargs -I {} git push origin --delete {}
+          fi
+
+      - name: 🚀 Delete all releases
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          releases=$(gh release list --json tagName -q '.[].tagName')
+
+          if [ -z "$releases" ]; then
+            echo "No releases found 👍"
+          else
+            echo "$releases" | xargs -I {} gh release delete {} -y
+          fi
