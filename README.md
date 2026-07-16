@@ -1,5 +1,5 @@
 # BedroomLauncher
-[Downloads](https://img.shields.io/github/downloads/voltageStudiosOfficial/BedroomLauncher/total)
+![Downloads](https://img.shields.io/github/downloads/voltageStudiosOfficial/BedroomLauncher/total)
 
 > [!IMPORTANT]
 > This project is **completely separate** from [ZalithLauncher2](https://github.com/ZalithLauncher2), [LeviLaunchroid](https://github.com/LiteLDev/LeviLaunchroid), and [PojavLauncher](https://github.com/PojavLauncherTeam/PojavLauncher).
