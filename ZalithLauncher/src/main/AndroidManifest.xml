@@ -24,14 +24,14 @@
     <uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS"/>
 
     <application
-        android:name=".ZLApplication"
+        android:name=".DreamApplication"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:networkSecurityConfig="@xml/network_security_config"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="${launcher_name}"
+        android:label="Dream"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:theme="@style/AppTheme.ZalithLauncher"
+        android:theme="@style/AppTheme.Dream"
         android:appCategory="game"
         android:supportsRtl="true"
         android:isGame="true"
@@ -60,7 +60,7 @@
 
         <activity-alias
             android:label="@string/import_modpack"
-            android:name="com.movtery.activity.ImportModpackActivity"
+            android:name="tech.voltagestudios.dream.activity.ImportModpackActivity"
             android:exported="true"
             android:targetActivity=".ui.activities.SplashActivity">
 
@@ -84,7 +84,7 @@
 
         <activity-alias
             android:label="@string/control_manage_import"
-            android:name="com.movtery.activity.ImportControlsActivity"
+            android:name="tech.voltagestudios.dream.activity.ImportControlsActivity"
             android:exported="true"
             android:targetActivity=".ui.activities.SplashActivity">
 

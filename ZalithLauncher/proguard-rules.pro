@@ -36,17 +36,17 @@
 -keep,allowobfuscation @dagger.hilt.android.AndroidEntryPoint class *
 
 
--keep class com.movtery.zalithlauncher.bridge.** { *; }
--keep class com.movtery.zalithlauncher.utils.device.VulkanChecker {
+-keep class tech.voltagestudios.dream.bridge.** { *; }
+-keep class tech.voltagestudios.dream.utils.device.VulkanChecker {
     *;
 }
--keep class com.movtery.zalithlauncher.utils.device.VulkanCapabilities {
+-keep class tech.voltagestudios.dream.utils.device.VulkanCapabilities {
     *;
 }
--keep interface com.movtery.zalithlauncher.utils.device.VulkanLogCallback {
+-keep interface tech.voltagestudios.dream.utils.device.VulkanLogCallback {
     *;
 }
--keep class com.movtery.zalithlauncher.game.input.CriticalNativeTest {
+-keep class tech.voltagestudios.dream.game.input.CriticalNativeTest {
     *;
 }
 
