@@ -1,6 +1,6 @@
 /*
- * Zalith Launcher 2
- * Copyright (C) 2025 MovTery <movtery228@qq.com> and contributors
+ * Bedroom Launcher (BL)
+ * Copyright (C) 2025 Voltage Studios Official <voltageStudiosOfficial@qq.com> and contributors
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -49,7 +49,7 @@ import okio.Path.Companion.toOkioPath
 import kotlin.properties.Delegates
 
 @HiltAndroidApp
-class DreamApplication : Application(), SingletonImageLoader.Factory {
+class BLApplication : Application(), SingletonImageLoader.Factory {
     companion object {
         @JvmStatic
         var DEVICE_ARCHITECTURE by Delegates.notNull<Int>()
@@ -74,7 +74,7 @@ class DreamApplication : Application(), SingletonImageLoader.Factory {
                 Logger.error("AppCrash", "An exception occurred while saving the crash report", t)
             }
 
-            showLauncherCrash(this@DreamApplication, throwable, th !is SplashException)
+            showLauncherCrash(this@BLApplication, throwable, th !is SplashException)
             Process.killProcess(Process.myPid())
         }
 
@@ -100,7 +100,7 @@ class DreamApplication : Application(), SingletonImageLoader.Factory {
                 file = PathManager.FILE_CRASH_REPORT,
                 throwable = launchTh
             ) {
-                Log.w("DreamApplication", "An exception occurred while saving the crash report", it)
+                Log.w("BLApplication", "An exception occurred while saving the crash report", it)
             }
             showFatalError(this, launchTh)
         }

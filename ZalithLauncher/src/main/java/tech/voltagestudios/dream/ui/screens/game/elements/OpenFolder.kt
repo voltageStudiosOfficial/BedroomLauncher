@@ -1,6 +1,6 @@
 /*
- * Zalith Launcher 2
- * Copyright (C) 2025 MovTery <movtery228@qq.com> and contributors
+ * Bedroom Launcher (BL)
+ * Copyright (C) 2025 Voltage Studios Official <voltageStudiosOfficial@qq.com> and contributors
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -80,7 +80,7 @@ import tech.voltagestudios.dream.ui.components.MarqueeText
 import tech.voltagestudios.dream.ui.components.ProgressDialog
 import tech.voltagestudios.dream.ui.components.SimpleAlertDialog
 import tech.voltagestudios.dream.ui.screens.content.elements.BaseFileItem
-import tech.voltagestudios.dream.ui.theme.DreamTheme
+import tech.voltagestudios.dream.ui.theme.BedroomLauncherTheme
 import tech.voltagestudios.dream.ui.theme.itemColor
 import tech.voltagestudios.dream.ui.theme.onItemColor
 import tech.voltagestudios.dream.ui.theme.showThemed
@@ -432,7 +432,7 @@ private fun ImportFileOperation(
 @Preview(showBackground = true)
 @Composable
 private fun OpenFolderLayerPreview() {
-    DreamTheme {
+    BedroomLauncherTheme {
         Box(
             modifier = Modifier.fillMaxSize()
         ) {

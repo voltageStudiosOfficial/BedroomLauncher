@@ -1,6 +1,6 @@
 /*
- * Zalith Launcher 2
- * Copyright (C) 2025 MovTery <movtery228@qq.com> and contributors
+ * Bedroom Launcher (BL)
+ * Copyright (C) 2025 Voltage Studios Official <voltageStudiosOfficial@qq.com> and contributors
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ package tech.voltagestudios.dream.components.jre
 
 import android.content.Context
 import android.content.res.AssetManager
-import tech.voltagestudios.dream.DreamApplication
+import tech.voltagestudios.dream.BLApplication
 import tech.voltagestudios.dream.components.AbstractUnpackTask
 import tech.voltagestudios.dream.components.InstallableItem
 import tech.voltagestudios.dream.game.multirt.RuntimesManager
@@ -88,7 +88,7 @@ class UnpackJreTask(
         }
     }
 
-    private fun getRuntimeByArch() = "bin-" + Architecture.archAsString(DreamApplication.DEVICE_ARCHITECTURE) + ".tar.xz"
+    private fun getRuntimeByArch() = "bin-" + Architecture.archAsString(BLApplication.DEVICE_ARCHITECTURE) + ".tar.xz"
 
     override suspend fun run() {
         runCatching {

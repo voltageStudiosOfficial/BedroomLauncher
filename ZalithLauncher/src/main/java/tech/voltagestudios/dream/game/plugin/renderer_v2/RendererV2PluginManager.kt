@@ -1,5 +1,5 @@
 /*
- * Zalith Launcher 2
+ * Bedroom Launcher (BL)
  * Copyright (C) 2025 MovTery <movtery228@qq> and contributors
  *
  * This program is free software: you can redistribute it and/or modify

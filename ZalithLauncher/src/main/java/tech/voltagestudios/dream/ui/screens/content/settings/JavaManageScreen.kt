@@ -1,6 +1,6 @@
 /*
- * Zalith Launcher 2
- * Copyright (C) 2025 MovTery <movtery228@qq.com> and contributors
+ * Bedroom Launcher (BL)
+ * Copyright (C) 2025 Voltage Studios Official <voltageStudiosOfficial@qq.com> and contributors
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -57,7 +57,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import tech.voltagestudios.dream.R
-import tech.voltagestudios.dream.DreamApplication
+import tech.voltagestudios.dream.BLApplication
 import tech.voltagestudios.dream.context.getFileName
 import tech.voltagestudios.dream.coroutine.Task
 import tech.voltagestudios.dream.coroutine.TaskSystem
@@ -374,7 +374,7 @@ private fun JavaRuntimeItem(
                         )
                     }
                     runtime.arch?.let { arch ->
-                        val compatible = DreamApplication.DEVICE_ARCHITECTURE == Architecture.archAsInt(arch)
+                        val compatible = BLApplication.DEVICE_ARCHITECTURE == Architecture.archAsInt(arch)
                         Text(
                             text = arch.takeIf {
                                 compatible

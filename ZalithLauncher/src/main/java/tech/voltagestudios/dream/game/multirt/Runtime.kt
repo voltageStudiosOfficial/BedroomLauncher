@@ -1,6 +1,6 @@
 /*
- * Zalith Launcher 2
- * Copyright (C) 2025 MovTery <movtery228@qq.com> and contributors
+ * Bedroom Launcher (BL)
+ * Copyright (C) 2025 Voltage Studios Official <voltageStudiosOfficial@qq.com> and contributors
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
  */
 package tech.voltagestudios.dream.game.multirt
 
-import tech.voltagestudios.dream.DreamApplication.Companion.DEVICE_ARCHITECTURE
+import tech.voltagestudios.dream.BLApplication.Companion.DEVICE_ARCHITECTURE
 import tech.voltagestudios.dream.utils.device.Architecture.archAsInt
 
 data class Runtime(

@@ -1,6 +1,6 @@
 /*
- * Zalith Launcher 2
- * Copyright (C) 2025 MovTery <movtery228@qq.com> and contributors
+ * Bedroom Launcher (BL)
+ * Copyright (C) 2025 Voltage Studios Official <voltageStudiosOfficial@qq.com> and contributors
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@ import androidx.annotation.Keep
 import androidx.compose.ui.unit.IntSize
 import tech.voltagestudios.dream.BuildConfig
 import tech.voltagestudios.dream.R
-import tech.voltagestudios.dream.DreamApplication
+import tech.voltagestudios.dream.BLApplication
 import tech.voltagestudios.dream.bridge.LoggerBridge.append
 import tech.voltagestudios.dream.bridge.LoggerBridge.appendTitle
 import tech.voltagestudios.dream.bridge.ZLBridge
@@ -273,7 +273,7 @@ class GameLauncher(
 
         appendTitle("Launch Minecraft")
         append("▷ Launcher version: ${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE})")
-        append("▷ Architecture: ${Architecture.archAsString(DreamApplication.DEVICE_ARCHITECTURE)}")
+        append("▷ Architecture: ${Architecture.archAsString(BLApplication.DEVICE_ARCHITECTURE)}")
         append("▷ Device model: ${Build.MANUFACTURER}, ${Build.MODEL}")
         append("▷ API version: ${Build.VERSION.SDK_INT}")
         append("▷ Renderer: ${renderer.getRendererName()}")

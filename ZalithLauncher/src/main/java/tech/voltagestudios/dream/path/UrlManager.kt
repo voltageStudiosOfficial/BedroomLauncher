@@ -1,6 +1,6 @@
 /*
- * Zalith Launcher 2
- * Copyright (C) 2025 MovTery <movtery228@qq.com> and contributors
+ * Bedroom Launcher (BL)
+ * Copyright (C) 2025 Voltage Studios Official <voltageStudiosOfficial@qq.com> and contributors
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -46,16 +46,16 @@ const val URL_MCMOD: String = "https://www.mcmod.cn/"
 const val URL_MINECRAFT_VERSION_REPOS: String = "https://piston-meta.mojang.com/mc/game/version_manifest_v2.json"
 const val URL_MINECRAFT_ASSETS_INDEX: String = "https://launchermeta.mojang.com/v1/packages"
 const val URL_MINECRAFT_PURCHASE = "https://www.xbox.com/games/store/minecraft-java-bedrock-edition-for-pc/9nxp44l49shj"
-const val URL_PROJECT: String = "https://github.com/voltageStudiosOfficial/Dream"
-const val URL_PROJECT_INFO: String = "https://api.github.com/repos/voltageStudiosOfficial/Dream-Info/contents/v2"
-const val URL_COMMUNITY: String = "https://github.com/voltageStudiosOfficial/Dream/graphs/contributors"
-const val URL_WEBLATE: String = "https://hosted.weblate.org/projects/zalithlauncher2"
+const val URL_PROJECT: String = "https://github.com/voltageStudiosOfficial/BedroomLauncher"
+const val URL_PROJECT_INFO: String = "https://api.github.com/repos/voltageStudiosOfficial/BedroomLauncher-Info/contents/v2"
+const val URL_COMMUNITY: String = "https://github.com/voltageStudiosOfficial/BedroomLauncher/graphs/contributors"
+const val URL_WEBLATE: String = "https://hosted.weblate.org/projects/bedroomlauncher"
 const val URL_SUPPORT: String = "https://ifdian.net/a/MovTery"
 const val URL_EASYTIER: String = "https://easytier.cn/"
 
 const val URL_GITHUB_RENDERER_PLUGINS = "https://github.com/ShirosakiMio/FCLRendererPlugin/releases/tag/Renderer"
 const val URL_GITHUB_DRIVER_PLUGINS = "https://github.com/FCL-Team/FCLDriverPlugin/releases/tag/Turnip"
-const val URL_GITHUB_NATIVE_LIB_PLUGINS = "https://github.com/voltageStudiosOfficial/NativeLibPlugin/releases"
+const val URL_GITHUB_NATIVE_LIB_PLUGINS = "https://github.com/BedroomLauncher/NativeLibPlugin/releases"
 
 const val URL_CLOUD_RENDERER_PLUGINS = "https://www.123865.com/s/YLIUVv-hae0v"
 const val URL_CLOUD_DRIVE_DRIVER_PLUGINS = "https://www.123865.com/s/YLIUVv-3ae0v"

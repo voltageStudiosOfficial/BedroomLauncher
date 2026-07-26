@@ -24,7 +24,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Dream"
+rootProject.name = "BedroomLauncher"
 include(":ZalithLauncher")
 include(":LWJGL")
 include(":LayerController")

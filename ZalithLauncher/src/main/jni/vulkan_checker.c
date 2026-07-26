@@ -143,7 +143,7 @@ Java_com_movtery_zalithlauncher_utils_device_VulkanChecker_nativeCheckVulkan(
     // 创建 VkInstance
     VkApplicationInfo appInfo = {
             .sType = VK_STRUCTURE_TYPE_APPLICATION_INFO,
-            .pApplicationName = "Dream",
+            .pApplicationName = "Bedroom Launcher",
             .applicationVersion = VK_MAKE_VERSION(1, 0, 0),
             .apiVersion = instanceApiVersion
     };

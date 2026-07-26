@@ -1,6 +1,6 @@
 /*
- * Zalith Launcher 2
- * Copyright (C) 2025 MovTery <movtery228@qq.com> and contributors
+ * Bedroom Launcher (BL)
+ * Copyright (C) 2025 Voltage Studios Official <voltageStudiosOfficial@qq.com> and contributors
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -94,7 +94,7 @@ import tech.voltagestudios.dream.ui.control.input.HidableInputLayout
 import tech.voltagestudios.dream.ui.control.input.TextInputMode
 import tech.voltagestudios.dream.ui.screens.game.elements.OpenFolderLayer
 import tech.voltagestudios.dream.ui.screens.game.elements.OpenFolderOperation
-import tech.voltagestudios.dream.ui.theme.DreamTheme
+import tech.voltagestudios.dream.ui.theme.BedroomLauncherTheme
 import tech.voltagestudios.dream.utils.device.PhysicalMouseChecker
 import tech.voltagestudios.dream.utils.getDisplayFriendlyRes
 import tech.voltagestudios.dream.utils.getParcelableSafely
@@ -445,7 +445,7 @@ class VMActivity : BaseAppCompatActivity(), SurfaceTextureListener, SurfaceHolde
         }
 
         setContent {
-            DreamTheme {
+            BedroomLauncherTheme {
                 ObserveFullScreenSetting(AllSettings.gameFullScreen.state)
                 Screen {
                     withHandler {

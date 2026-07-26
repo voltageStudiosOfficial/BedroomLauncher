@@ -1,6 +1,6 @@
 /*
- * Zalith Launcher 2
- * Copyright (C) 2025 MovTery <movtery228@qq.com> and contributors
+ * Bedroom Launcher (BL)
+ * Copyright (C) 2025 Voltage Studios Official <voltageStudiosOfficial@qq.com> and contributors
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -67,7 +67,7 @@ import tech.voltagestudios.dream.ui.screens.main.MainScreen
 import tech.voltagestudios.dream.ui.screens.main.crashlogs.LogShareMenu
 import tech.voltagestudios.dream.ui.screens.main.crashlogs.LogShareMenuOperation
 import tech.voltagestudios.dream.ui.screens.main.crashlogs.ShareLinkOperation
-import tech.voltagestudios.dream.ui.theme.DreamTheme
+import tech.voltagestudios.dream.ui.theme.BedroomLauncherTheme
 import tech.voltagestudios.dream.ui.theme.feativals.FestivalEffects
 import tech.voltagestudios.dream.ui.theme.showThemed
 import tech.voltagestudios.dream.ui.toAndroidString
@@ -295,7 +295,7 @@ class MainActivity : BaseAppCompatActivity() {
         )
 
         setContent {
-            DreamTheme(
+            BedroomLauncherTheme(
                 backgroundViewModel = backgroundViewModel,
                 festivals = festivals
             ) {
