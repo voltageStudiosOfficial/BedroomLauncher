@@ -2,6 +2,9 @@ import com.android.build.api.variant.FilterConfiguration.FilterType.ABI
 import com.android.build.api.variant.impl.VariantOutputImpl
 import com.android.build.gradle.tasks.MergeSourceSetFolders
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.TimeZone
 
 plugins {
     alias(libs.plugins.android.application)
@@ -21,6 +24,51 @@ val launcherUrl = project.findProperty("url_home") as? String ?: error("The \"ur
 
 val launcherVersionCode = (project.findProperty("launcher_version_code") as? String)?.toIntOrNull() ?: error("The \"launcher_version_code\" property is not set as an integer in gradle.properties.")
 val launcherVersionName = project.findProperty("launcher_version_name") as? String ?: error("The \"launcher_version_name\" property is not set in gradle.properties.")
+
+// Get git commit hash for debug version naming
+fun getGitCommitHash(): String {
+    return try {
+        val process = ProcessBuilder("git", "rev-parse", "--short=8", "HEAD")
+            .directory(rootDir)
+            .redirectErrorStream(true)
+            .start()
+        process.inputStream.bufferedReader().readText().trim()
+    } catch (e: Exception) {
+        logger.warn("Could not get git commit hash: ${e.message}")
+        "unknown"
+    }
+}
+
+// Get current timestamp for build uniqueness
+fun getBuildTimestamp(): String {
+    val dateFormat = SimpleDateFormat("yyyyMMddHHmm")
+    dateFormat.timeZone = TimeZone.getTimeZone("UTC")
+    return dateFormat.format(Date())
+}
+
+// Get git commit count for auto-incrementing versionCode
+fun getCommitCount(): Int {
+    return try {
+        val process = ProcessBuilder("git", "rev-list", "--count", "HEAD")
+            .directory(rootDir)
+            .redirectErrorStream(true)
+            .start()
+        process.inputStream.bufferedReader().readText().trim().toInt()
+    } catch (e: Exception) {
+        logger.warn("Could not get commit count: ${e.message}")
+        0
+    }
+}
+
+// Generate snapshot tag name like 26w31a
+// Format: YYwWWx where YY = last 2 digits of year, WW = week number, x = sequential letter
+fun generateSnapshotTag(): String {
+    val calendar = java.util.Calendar.getInstance(TimeZone.getTimeZone("UTC"))
+    val year = calendar.get(java.util.Calendar.YEAR) % 100
+    val week = calendar.get(java.util.Calendar.WEEK_OF_YEAR)
+    val weekChar = ('a' + (week % 26)).toChar()
+    return "${year}w${week}${weekChar}"
+}
 
 val defaultOAuthClientID = project.findProperty("oauth_client_id") as? String
 val defaultStorePassword = project.findProperty("default_store_password") as? String ?: error("The \"default_store_password\" property is not set in gradle.properties.")
@@ -61,7 +109,6 @@ android {
 
     defaultConfig {
         applicationId = zalithPackageName
-        applicationIdSuffix = ".v2"
         minSdk = 26
         targetSdk = 34
         versionCode = launcherVersionCode
@@ -82,7 +129,10 @@ android {
         debug {
             isMinifyEnabled = false
             applicationIdSuffix = ".debug"
-            versionNameSuffix = "-debug"
+            versionNameSuffix = "-${getGitCommitHash()}"
+            // Auto-increment versionCode: base code + commit count to ensure uniqueness
+            // This ensures each debug build has a unique versionCode that increases with each push
+            versionCodeOverride = launcherVersionCode + getCommitCount()
             signingConfig = signingConfigs.getByName("debugBuild")
         }
     }
