@@ -3,6 +3,7 @@ import com.android.build.api.variant.impl.VariantOutputImpl
 import com.android.build.gradle.tasks.MergeSourceSetFolders
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import java.text.SimpleDateFormat
+import java.util.Calendar
 import java.util.Date
 import java.util.TimeZone
 
@@ -61,12 +62,13 @@ fun getCommitCount(): Int {
 }
 
 // Generate snapshot tag name like 26w31a
-// Format: YYwWWx where YY = last 2 digits of year, WW = week number, x = sequential letter
+// Format: YYwWWx where YY = last 2 digits of year, WW = week number, x = sequential letter (a-x only, 24 builds max per week)
 fun generateSnapshotTag(): String {
-    val calendar = java.util.Calendar.getInstance(TimeZone.getTimeZone("UTC"))
-    val year = calendar.get(java.util.Calendar.YEAR) % 100
-    val week = calendar.get(java.util.Calendar.WEEK_OF_YEAR)
-    val weekChar = ('a' + (week % 26)).toChar()
+    val calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"))
+    val year = calendar.get(Calendar.YEAR) % 100
+    val week = calendar.get(Calendar.WEEK_OF_YEAR)
+    val weekIndex = week % 24
+    val weekChar = ('a' + weekIndex).toChar()
     return "${year}w${week}${weekChar}"
 }
 
@@ -111,8 +113,8 @@ android {
         applicationId = zalithPackageName
         minSdk = 26
         targetSdk = 34
-        versionCode = launcherVersionCode
-        versionName = launcherVersionName
+        versionCode = 2631
+        versionName = "26w31a"
         manifestPlaceholders["launcher_name"] = launcherAPPName
     }
 
@@ -132,7 +134,7 @@ android {
             versionNameSuffix = "-${getGitCommitHash()}"
             // Auto-increment versionCode: base code + commit count to ensure uniqueness
             // This ensures each debug build has a unique versionCode that increases with each push
-            versionCodeOverride = launcherVersionCode + getCommitCount()
+            versionCode = 2631 + getCommitCount()
             signingConfig = signingConfigs.getByName("debugBuild")
         }
     }
