@@ -45,6 +45,7 @@ import tech.voltagestudios.dream.coroutine.Task
 import tech.voltagestudios.dream.coroutine.TaskSystem
 import tech.voltagestudios.dream.game.control.ControlManager
 import tech.voltagestudios.dream.game.plugin.PluginLoader
+import tech.voltagestudios.dream.game.control.DevMenuManager
 import tech.voltagestudios.dream.game.plugin.driver.DriverPluginManager
 import tech.voltagestudios.dream.game.renderer.Renderers
 import tech.voltagestudios.dream.game.version.installed.VersionsManager
@@ -85,6 +86,7 @@ import tech.voltagestudios.dream.utils.network.openLink
 import tech.voltagestudios.dream.utils.network.openLinkInternal
 import tech.voltagestudios.dream.utils.string.getMessageOrToString
 import tech.voltagestudios.dream.viewmodel.BackgroundViewModel
+import tech.voltagestudios.dream.viewmodel.DevMenuViewModel
 import tech.voltagestudios.dream.viewmodel.ErrorViewModel
 import tech.voltagestudios.dream.viewmodel.EventViewModel
 import tech.voltagestudios.dream.viewmodel.HomePageOperation
@@ -170,6 +172,11 @@ class MainActivity : BaseAppCompatActivity() {
     private val vulkanCheckerViewModel: VulkanCheckerViewModel by viewModels()
 
     /**
+     * Dev Menu ViewModel
+     */
+    private val devMenuViewModel: DevMenuViewModel by viewModels()
+
+    /**
      * 是否开启捕获按键模式
      */
     private var isCaptureKey = false
@@ -186,6 +193,14 @@ class MainActivity : BaseAppCompatActivity() {
         refreshData()
 
         //初始化通知管理（创建渠道）
+
+        // Setup Dev Menu Konami code detection
+        DevMenuManager.setOnDevMenuActivated {
+            runOnUiThread {
+                devMenuViewModel.showDevMenu()
+                screenBackStackModel.mainScreen.navigateTo(NormalNavKey.DevMenu)
+            }
+        }
         NotificationManager.initManager(this)
 
         //检查更新
@@ -312,6 +327,7 @@ class MainActivity : BaseAppCompatActivity() {
                         MainScreen(
                             screenBackStackModel = screenBackStackModel,
                             eventViewModel = eventViewModel,
+                            devMenuViewModel = devMenuViewModel,
                             modpackImportViewModel = modpackImportViewModel,
                             submitError = {
                                 errorViewModel.showError(it)

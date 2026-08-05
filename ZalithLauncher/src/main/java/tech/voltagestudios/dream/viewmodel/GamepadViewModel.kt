@@ -26,6 +26,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.geometry.Offset
 import androidx.core.util.set
 import androidx.lifecycle.ViewModel
+import tech.voltagestudios.dream.game.control.DevMenuManager
 import tech.voltagestudios.dream.setting.AllSettings
 import tech.voltagestudios.dream.ui.control.gamepad.DpadDirection
 import tech.voltagestudios.dream.ui.control.gamepad.GamepadMap
@@ -263,6 +264,7 @@ class GamepadViewModel : ViewModel() {
 
     fun updateButton(code: Int, pressed: Boolean) {
         onActive()
+        DevMenuManager.onButtonInput(code, pressed)
         sendEvent(Event.Button(code, pressed))
     }
 
@@ -323,6 +325,7 @@ class GamepadViewModel : ViewModel() {
 
     private fun updateDpad(direction: DpadDirection, pressed: Boolean) {
         onActive()
+        DevMenuManager.onDpadInput(direction, pressed)
         sendEvent(Event.Dpad(direction, pressed))
     }
 
@@ -335,6 +338,17 @@ class GamepadViewModel : ViewModel() {
     }
 
     private fun sendEvent(event: Event) {
+        // Check for Konami code input
+        when (event) {
+            is Event.Dpad -> {
+                DevMenuManager.onDpadInput(event.direction, event.pressed)
+            }
+            is Event.Button -> {
+                DevMenuManager.onButtonInput(event.code, event.pressed)
+            }
+            else -> {}
+        }
+        
         eventListeners.forEach { listener ->
             listener(event)
         }

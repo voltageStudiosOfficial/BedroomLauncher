@@ -38,6 +38,8 @@ sealed interface NormalNavKey : TitledNavKey {
     @Serializable data object UnpackDeps: NormalNavKey
     /** 启动器主页屏幕 */
     @Serializable data object LauncherMain : NormalNavKey
+    /** Dev Menu - Accessed via Konami code on controller */
+    @Serializable data object DevMenu : NormalNavKey
     /** 账号管理屏幕 */
     @Serializable data class AccountManager(
         val loginMenu: FirstLoginMenu = FirstLoginMenu.NONE

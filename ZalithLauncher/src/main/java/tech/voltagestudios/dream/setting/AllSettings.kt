@@ -656,4 +656,10 @@ object AllSettings : SettingsRegistry() {
      * 启动 MC26.2+ 时，自动检查 Vulkan
      */
     val autoVulkanChecker = boolSetting("autoVulkanChecker", true)
+
+    /**
+     * Dev Mode Bypass - Allows bypassing EULA checks when enabled
+     * Accessed via Konami code on controller
+     */
+    val devModeBypass = boolSetting("devModeBypass", false)
 }

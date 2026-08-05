@@ -91,6 +91,7 @@ import tech.voltagestudios.dream.ui.screens.content.AccountManageScreen
 import tech.voltagestudios.dream.ui.screens.content.DownloadScreen
 import tech.voltagestudios.dream.ui.screens.content.FileSelectorScreen
 import tech.voltagestudios.dream.ui.screens.content.HomePageEditorScreen
+import tech.voltagestudios.dream.ui.screens.content.DevMenuScreen
 import tech.voltagestudios.dream.ui.screens.content.LauncherScreen
 import tech.voltagestudios.dream.ui.screens.content.LicenseScreen
 import tech.voltagestudios.dream.ui.screens.content.LogViewScreen
@@ -114,6 +115,7 @@ import tech.voltagestudios.dream.utils.animation.getAnimateTween
 import tech.voltagestudios.dream.utils.festival.LocalFestivals
 import tech.voltagestudios.dream.utils.file.formatFileSize
 import tech.voltagestudios.dream.viewmodel.ErrorViewModel
+import tech.voltagestudios.dream.viewmodel.DevMenuViewModel
 import tech.voltagestudios.dream.viewmodel.EventViewModel
 import tech.voltagestudios.dream.viewmodel.LocalBackgroundViewModel
 import tech.voltagestudios.dream.viewmodel.ModpackImportViewModel
@@ -125,6 +127,7 @@ import tech.voltagestudios.dream.viewmodel.sendToast
 fun MainScreen(
     screenBackStackModel: ScreenBackStackViewModel,
     eventViewModel: EventViewModel,
+    devMenuViewModel: DevMenuViewModel,
     modpackImportViewModel: ModpackImportViewModel,
     submitError: (ErrorViewModel.ThrowableMessage) -> Unit
 ) {
@@ -625,6 +628,15 @@ private fun NavigationUI(
                 }
                 entry<NormalNavKey.LogView> { key ->
                     LogViewScreen(
+
+                entry<NormalNavKey.DevMenu> {
+                    DevMenuScreen(
+                        devMenuViewModel = devMenuViewModel,
+                        onDismiss = {
+                            screenBackStackModel.mainScreen.removeLastOrNull()
+                        }
+                    )
+                }
                         key = key,
                         backStackViewModel = screenBackStackModel,
                     )
